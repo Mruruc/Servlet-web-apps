@@ -1,0 +1,30 @@
+<%@ page import="com.mruruc.dto.UserDto" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Home</title>
+</head>
+<body>
+<header class="alert alert-primary">
+    <div class="container">
+        <h1>#FindContact</h1>
+    </div>
+</header>
+
+<div class="container">
+    <a href="./" class="px-4">Home</a>
+
+    <%if((UserDto)session.getAttribute("user") == null){%>
+    <a href="./register" class="px-4">Register</a>
+    <a href="./login" class="px-4">Login</a>
+    <%}else {%>
+    <a href="./logout" class="px-4">Logout</a>
+    <a href="./get-contact" class="px-4">Contacts</a>
+    <a href="./add-contact" class="px-4">Add contact</a>
+    <%}%>
+
+</div>
+</br></br>
